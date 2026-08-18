@@ -10,7 +10,7 @@
     --bg:#F5F6F3; --surface:#FFFFFF; --ink:#22302B; --ink-2:#51605A; --muted:#7B8781;
     --line:#DDE2DC; --accent:#0E7A66; --accent-soft:#E2EFEA; --grow:#A9642B;
     --chip:#EDF0EB;
-    --g-hispanic:#C05A2E; --g-asian:#0E8A6E; --g-white:#3A67CC; --g-seasian:#9C3F9C; --g-black:#7E7A12;
+    --g-hispanic:#C05A2E; --g-asian:#0E8A6E; --g-white:#3A67CC; --g-black:#7E7A12;
     --map-edge:#22302B; --map-hairline:rgba(34,48,43,.55);
   }
   @media (prefers-color-scheme: dark){
@@ -18,7 +18,7 @@
       --bg:#151A18; --surface:#1E2522; --ink:#E8ECE9; --ink-2:#ADB8B2; --muted:#84908A;
       --line:#333D38; --accent:#4CBFA6; --accent-soft:#1E3630; --grow:#D89A5E;
       --chip:#262E2A;
-      --g-hispanic:#D06C3C; --g-asian:#20A183; --g-white:#5A83DE; --g-seasian:#B855B8; --g-black:#95901E;
+      --g-hispanic:#D06C3C; --g-asian:#20A183; --g-white:#5A83DE; --g-black:#95901E;
       --map-edge:#E8ECE9; --map-hairline:rgba(232,236,233,.45);
     }
   }
@@ -26,7 +26,7 @@
     --bg:#151A18; --surface:#1E2522; --ink:#E8ECE9; --ink-2:#ADB8B2; --muted:#84908A;
     --line:#333D38; --accent:#4CBFA6; --accent-soft:#1E3630; --grow:#D89A5E;
     --chip:#262E2A;
-    --g-hispanic:#D06C3C; --g-asian:#20A183; --g-white:#5A83DE; --g-seasian:#B855B8; --g-black:#95901E;
+    --g-hispanic:#D06C3C; --g-asian:#20A183; --g-white:#5A83DE; --g-black:#95901E;
     --map-edge:#E8ECE9; --map-hairline:rgba(232,236,233,.45);
   }
   *{box-sizing:border-box}
@@ -63,7 +63,7 @@
   th.n{text-align:right}
   .swatch{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:8px;vertical-align:baseline}
   .sw-hispanic{background:var(--g-hispanic)} .sw-asian{background:var(--g-asian)}
-  .sw-white{background:var(--g-white)} .sw-seasian{background:var(--g-seasian)} .sw-black{background:var(--g-black)}
+  .sw-white{background:var(--g-white)} .sw-black{background:var(--g-black)}
   .note{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted);margin-top:10px}
   .sitenav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:22px;margin-bottom:30px;border-bottom:1px solid var(--line);font-family:"IBM Plex Sans",Arial,sans-serif}
   .sitenav .brand{font-weight:600;font-size:14px;color:var(--ink);text-decoration:none}
@@ -82,8 +82,6 @@
   path.cluster[data-group="hispanic"]{fill:var(--g-hispanic)}
   path.cluster[data-group="asian"]{fill:var(--g-asian)}
   path.cluster[data-group="white"]{fill:var(--g-white)}
-  path.cluster[data-group="seasian"]{fill:var(--g-seasian)}
-  path.cluster[data-group="black"]{fill:var(--g-black)}
   .map-tooltip{position:fixed;display:none;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:8px 11px;font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--ink-2);pointer-events:none;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.12)}
   .map-tooltip .tt-title{color:var(--ink);font-weight:600;margin-bottom:2px}
   .map-fallback{border:1px dashed var(--line);border-radius:10px;padding:26px 20px;text-align:center;color:var(--muted);font-family:"IBM Plex Sans",Arial,sans-serif;font-size:13.5px}
@@ -109,7 +107,7 @@
   <div class="tiles">
     <div class="tile"><b>12.9M</b><span>people across LA &amp; Orange counties</span></div>
     <div class="tile"><b>48.4%</b><span>of LA County is Hispanic / Latino</span></div>
-    <div class="tile"><b>7 of 17</b><span>areas where Hispanic residents are the largest group</span></div>
+    <div class="tile"><b>7 of 15</b><span>areas where Hispanic residents are the largest group</span></div>
     <div class="tile"><b>5 of 9</b><span>gatherings naming Hispanic or Spanish-speaking communities as a focus</span></div>
   </div>
 </header>
@@ -136,7 +134,7 @@
 </div>
 
 <h2>Where each group concentrates</h2>
-<p class="sub">Regions are drawn around 17 reference points and clipped to the real county outlines. Hover any region for its figure.</p>
+<p class="sub">Regions are drawn around 15 reference points and clipped to the real county outlines. Hover any region for its figure.</p>
 <div class="map-section">
   <div>
     <div id="realMap"></div>
@@ -145,9 +143,7 @@
     <ul class="legend" id="mapLegend">
       <li class="legend-item"><span class="key sw-hispanic"></span>Hispanic / Latino majority</li>
       <li class="legend-item"><span class="key sw-white"></span>White majority</li>
-      <li class="legend-item"><span class="key sw-asian"></span>Asian majority (general)</li>
-      <li class="legend-item"><span class="key sw-seasian"></span>Southeast Asian enclave</li>
-      <li class="legend-item"><span class="key sw-black"></span>Black majority / plurality</li>
+      <li class="legend-item"><span class="key sw-asian"></span>Asian majority</li>
     </ul>
     <p class="note">County shapes from US Census Bureau TIGER boundary data. Boundaries are a visual stand-in, not literal zip code lines — reliable per-zip figures aren't available.</p>
   </div>
@@ -169,13 +165,11 @@
     <tr><td>Mission Viejo</td><td>Orange</td><td><span class="swatch sw-white"></span>White</td><td class="n">~55%</td><td>Hispanic</td><td class="n">~20%</td></tr>
     <tr><td>Koreatown</td><td>LA</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~55%</td><td>Asian</td><td class="n">~30%</td></tr>
     <tr><td>Anaheim</td><td>Orange</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~53%</td><td>White</td><td class="n">~24%</td></tr>
-    <tr><td>Little Saigon</td><td>Orange</td><td><span class="swatch sw-seasian"></span>Asian, mostly Vietnamese</td><td class="n">52.8%</td><td>Hispanic</td><td class="n">~30%</td></tr>
+    <tr><td>Little Saigon</td><td>Orange</td><td><span class="swatch sw-asian"></span>Asian, mostly Vietnamese</td><td class="n">52.8%</td><td>Hispanic</td><td class="n">~30%</td></tr>
     <tr><td>Irvine</td><td>Orange</td><td><span class="swatch sw-asian"></span>Asian</td><td class="n">44.6%</td><td>White</td><td class="n">34.3%</td></tr>
     <tr><td>Long Beach</td><td>LA</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~43%</td><td>White</td><td class="n">~29%</td></tr>
     <tr><td>Pasadena</td><td>LA</td><td><span class="swatch sw-white"></span>White</td><td class="n">~40%</td><td>Hispanic</td><td class="n">~34%</td></tr>
     <tr><td>South Bay (Torrance)</td><td>LA</td><td><span class="swatch sw-white"></span>White</td><td class="n">~38%</td><td>Asian</td><td class="n">~35%</td></tr>
-    <tr><td>Cambodia Town</td><td>LA</td><td><span class="swatch sw-seasian"></span>Asian, mostly Cambodian</td><td class="n">~20%</td><td>&mdash;</td><td class="n">&mdash;</td></tr>
-    <tr><td>Thai Town</td><td>LA</td><td><span class="swatch sw-seasian"></span>Thai residents</td><td class="n">~3%</td><td>&mdash;</td><td class="n">&mdash;</td></tr>
   </tbody>
 </table>
 </div>
@@ -207,7 +201,7 @@
     const areaPoints = [
       { name:'Santa Ana', lon:-117.8677, lat:33.7455, group:'hispanic', pct:'76.6% Hispanic' },
       { name:'Irvine', lon:-117.8265, lat:33.6846, group:'asian', pct:'44.6% Asian' },
-      { name:'Little Saigon', lon:-117.9940, lat:33.7514, group:'seasian', pct:'52.8% Asian, mostly Vietnamese' },
+      { name:'Little Saigon', lon:-117.9940, lat:33.7514, group:'asian', pct:'52.8% Asian, mostly Vietnamese' },
       { name:'Anaheim', lon:-117.9143, lat:33.8366, group:'hispanic', pct:'~53% Hispanic' },
       { name:'Huntington Beach', lon:-117.9988, lat:33.6595, group:'white', pct:'~68% White' },
       { name:'Mission Viejo', lon:-117.6720, lat:33.6, group:'white', pct:'~55% White' },
@@ -215,10 +209,8 @@
       { name:'East LA', lon:-118.1728, lat:34.0239, group:'hispanic', pct:'~94% Hispanic' },
       { name:'Monterey Park', lon:-118.1228, lat:34.0625, group:'asian', pct:'64.4% Asian' },
       { name:'Koreatown', lon:-118.3005, lat:34.0577, group:'hispanic', pct:'~55% Hispanic (residential)' },
-      { name:'Thai Town', lon:-118.3047, lat:34.1017, group:'seasian', pct:'~3% Thai (cultural hub)' },
       { name:'Van Nuys', lon:-118.4108, lat:34.2011, group:'hispanic', pct:'~65% Hispanic' },
       { name:'Santa Monica', lon:-118.4912, lat:34.0195, group:'white', pct:'~65% White' },
-      { name:'Cambodia Town', lon:-118.1739, lat:33.7938, group:'seasian', pct:'~20% Asian, mostly Cambodian' },
       { name:'Long Beach', lon:-118.1937, lat:33.7701, group:'hispanic', pct:'~43% Hispanic' },
       { name:'Pasadena', lon:-118.1445, lat:34.1478, group:'white', pct:'~40% White' },
       { name:'Torrance', lon:-118.3406, lat:33.8358, group:'white', pct:'~38% White · ~35% Asian' }
@@ -232,7 +224,7 @@
     const svg = d3.select(container).append('svg')
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('role','img')
-      .attr('aria-label','Map of Los Angeles and Orange counties shaded by the largest population group in each of 17 reference areas.')
+      .attr('aria-label','Map of Los Angeles and Orange counties shaded by the largest population group in each of 15 reference areas.')
       .style('width','100%').style('display','block');
 
     const defs = svg.append('defs');
@@ -278,7 +270,7 @@
       .attr('stroke-width',0.7);
 
     document.querySelectorAll('#mapLegend .legend-item').forEach(function(item, idx){
-      const groups = ['hispanic','white','asian','seasian','black'];
+      const groups = ['hispanic','white','asian'];
       const g = groups[idx];
       item.addEventListener('mouseenter', function(){
         clusterGroup.selectAll('path.cluster').attr('fill-opacity', d => d.group === g ? 0.95 : 0.08);
