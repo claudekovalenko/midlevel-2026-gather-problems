@@ -55,10 +55,29 @@
   .pill{display:inline-block;background:var(--chip);border-radius:99px;padding:1px 9px;font-size:12px;white-space:nowrap}
   .pill.y{background:var(--accent-soft);color:var(--accent);font-weight:600}
   .note{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted);margin-top:10px}
+  .sitenav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:22px;margin-bottom:30px;border-bottom:1px solid var(--line);font-family:"IBM Plex Sans",Arial,sans-serif}
+  .sitenav .brand{font-weight:600;font-size:14px;color:var(--ink);text-decoration:none}
+  .sitenav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+  .sitenav a{font-size:13.5px;color:var(--muted);text-decoration:none}
+  .sitenav a[aria-current="page"]{color:var(--accent);font-weight:600}
+  .sitenav a:hover{color:var(--accent)}
+  .sitenav a:focus-visible,.crosslink:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .crosslink{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 22px;text-decoration:none;color:inherit}
+  .crosslink:hover{border-color:var(--accent)}
+  .crosslink strong{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;display:block;margin-bottom:6px}
+  .crosslink span{color:var(--ink-2);font-size:15px}
+  .crosslink em{font-style:normal;color:var(--accent);font-family:"IBM Plex Sans",Arial,sans-serif;font-size:13px;font-weight:600;display:block;margin-top:10px}
   footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted)}
 </style>
 
 <div class="wrap">
+<nav class="sitenav">
+  <a class="brand" href="index.html">LA Metro Midlevel</a>
+  <ul>
+    <li><a href="index.html" aria-current="page">Gathering Summary</a></li>
+    <li><a href="demographics.html">LA Metro Demographics</a></li>
+  </ul>
+</nav>
 <header>
   <span class="eyebrow">Gathering brief · Aug 19–22, 2026</span>
   <h1>LA Metro Midlevel 2026</h1>
@@ -179,6 +198,14 @@
     <p style="margin:8px 0 0;color:var(--ink-2)">Celebrate many baptisms and a shift from "attending church" to operating as family. Concern: some of the baptized don't stay in the faith, and community outside Saturday meetings is limited by distance. Growth edges checked: Spirit Led, Love, Prayer, Fellowship.</p>
   </div>
 </div>
+
+<h2>Who lives where they're serving</h2>
+<p class="sub">A companion reference: the ethnic and racial makeup of LA and Orange County, mapped region by region.</p>
+<a class="crosslink" href="demographics.html">
+  <strong>LA Metro Demographics Breakdown</strong>
+  <span>An interactive map of LA and Orange County with a people-group breakdown for 17 reference areas &mdash; Santa Ana, Compton, East LA, Little Saigon, Koreatown, Monterey Park and more. Worth reading alongside the roster: five of the nine gatherings named Hispanic or Spanish-speaking communities as a focus, and Hispanic residents are the largest group in LA County at 48.4%.</span>
+  <em>Open the breakdown &rarr;</em>
+</a>
 
 <footer>Source: "LA Metro Midlevel 2026" Airtable — Applications (9 records) and Member Survey (2 records), as of Aug 18, 2026. Emails and phone numbers are in the base and intentionally omitted here.</footer>
 </div>
