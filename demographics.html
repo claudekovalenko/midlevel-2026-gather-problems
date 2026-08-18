@@ -111,7 +111,7 @@
   <div class="tiles">
     <div class="tile"><b>12.9M</b><span>people across LA &amp; Orange counties</span></div>
     <div class="tile"><b>48.4%</b><span>of LA County is Hispanic / Latino</span></div>
-    <div class="tile"><b>7 of 15</b><span>areas where Hispanic residents are the largest group</span></div>
+    <div class="tile"><b>7 of 14</b><span>areas where Hispanic residents are the largest group</span></div>
     <div class="tile"><b>0 of 9</b><span>gatherings naming White communities as a focus</span></div>
   </div>
 </header>
@@ -138,7 +138,7 @@
 </div>
 
 <h2>Where each group concentrates</h2>
-<p class="sub">Regions are drawn around 15 reference points and clipped to the real county outlines. Hover any region for its figure.</p>
+<p class="sub">Regions are drawn around 14 reference points and clipped to the real county outlines. Hover any region for its figure.</p>
 <div class="map-section">
   <div>
     <div id="realMap"></div>
@@ -169,7 +169,6 @@
     <tr><td>Mission Viejo</td><td>Orange</td><td><span class="swatch sw-white"></span>White</td><td class="n">~55%</td><td>Hispanic</td><td class="n">~20%</td></tr>
     <tr><td>Koreatown</td><td>LA</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~55%</td><td>Asian</td><td class="n">~30%</td></tr>
     <tr><td>Anaheim</td><td>Orange</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~53%</td><td>White</td><td class="n">~24%</td></tr>
-    <tr><td>Little Saigon</td><td>Orange</td><td><span class="swatch sw-asian"></span>Asian</td><td class="n">52.8%</td><td>Hispanic</td><td class="n">~30%</td></tr>
     <tr><td>Irvine</td><td>Orange</td><td><span class="swatch sw-asian"></span>Asian</td><td class="n">44.6%</td><td>White</td><td class="n">34.3%</td></tr>
     <tr><td>Long Beach</td><td>LA</td><td><span class="swatch sw-hispanic"></span>Hispanic</td><td class="n">~43%</td><td>White</td><td class="n">~29%</td></tr>
     <tr><td>Pasadena</td><td>LA</td><td><span class="swatch sw-white"></span>White</td><td class="n">~40%</td><td>Hispanic</td><td class="n">~34%</td></tr>
@@ -179,7 +178,7 @@
 </div>
 
 <h2>What the gatherings are targeting</h2>
-<p class="sub">The people groups named across the nine applications, set against the areas on the map. Two different counts &mdash; nine applications on the left, fifteen mapped areas on the right.</p>
+<p class="sub">The people groups named across the nine applications, set against the areas on the map. Two different counts &mdash; nine applications on the left, fourteen mapped areas on the right.</p>
 <div class="cols">
   <div>
     <p class="sub" style="color:var(--ink);font-weight:600;font-size:15px;margin-bottom:10px">Named as a focus &middot; of 9 applications</p>
@@ -189,16 +188,16 @@
     <p class="note">Hispanic or Spanish-speaking: Garden, Corona Sandals, Neighbors &amp; Nations. Asian: Nations Church, Anchor (Kyle Pierson).</p>
   </div>
   <div>
-    <p class="sub" style="color:var(--ink);font-weight:600;font-size:15px;margin-bottom:10px">Largest group on the map &middot; of 15 areas</p>
-    <div class="bar-row"><span class="lbl">Hispanic / Latino</span><div class="bar-track"><div class="bar hispanic" style="width:47%"></div></div><span class="val">7</span></div>
-    <div class="bar-row"><span class="lbl">White</span><div class="bar-track"><div class="bar white" style="width:33%"></div></div><span class="val">5</span></div>
-    <div class="bar-row"><span class="lbl">Asian</span><div class="bar-track"><div class="bar asian" style="width:20%"></div></div><span class="val">3</span></div>
+    <p class="sub" style="color:var(--ink);font-weight:600;font-size:15px;margin-bottom:10px">Largest group on the map &middot; of 14 areas</p>
+    <div class="bar-row"><span class="lbl">Hispanic / Latino</span><div class="bar-track"><div class="bar hispanic" style="width:50%"></div></div><span class="val">7</span></div>
+    <div class="bar-row"><span class="lbl">White</span><div class="bar-track"><div class="bar white" style="width:36%"></div></div><span class="val">5</span></div>
+    <div class="bar-row"><span class="lbl">Asian</span><div class="bar-track"><div class="bar asian" style="width:14%"></div></div><span class="val">2</span></div>
     <p class="note">White-majority areas: Huntington Beach, Santa Monica / West LA, Mission Viejo, Pasadena, South Bay (Torrance).</p>
   </div>
 </div>
 <div class="callout">
   <strong>No gathering names White communities as a target group</strong>
-  <p>Every application names a group by ethnicity, life stage, or affinity &mdash; Hispanic and Spanish-speaking, Vietnamese, Chinese, Punjabi, Gujarati, Japanese, Iranian, North African, Afghan, youth, recovery, elderly, LGBTQ+, musicians &mdash; but none names White residents, who are a third of Orange County and a quarter of LA County, and the largest group in 5 of the 15 mapped areas.</p>
+  <p>Every application names a group by ethnicity, life stage, or affinity &mdash; Hispanic and Spanish-speaking, Vietnamese, Chinese, Punjabi, Gujarati, Japanese, Iranian, North African, Afghan, youth, recovery, elderly, LGBTQ+, musicians &mdash; but none names White residents, who are a third of Orange County and a quarter of LA County, and the largest group in 5 of the 14 mapped areas.</p>
   <p>The nearest case is Garden, the one gathering meeting inside a White-majority city: Huntington Beach is ~68% White, but Garden's stated focus is the Hispanic community of Oak View, a Latino neighborhood within it.</p>
 </div>
 
@@ -229,7 +228,6 @@
     const areaPoints = [
       { name:'Santa Ana', lon:-117.8677, lat:33.7455, group:'hispanic', pct:'76.6% Hispanic' },
       { name:'Irvine', lon:-117.8265, lat:33.6846, group:'asian', pct:'44.6% Asian' },
-      { name:'Little Saigon', lon:-117.9940, lat:33.7514, group:'asian', pct:'52.8% Asian' },
       { name:'Anaheim', lon:-117.9143, lat:33.8366, group:'hispanic', pct:'~53% Hispanic' },
       { name:'Huntington Beach', lon:-117.9988, lat:33.6595, group:'white', pct:'~68% White' },
       { name:'Mission Viejo', lon:-117.6720, lat:33.6, group:'white', pct:'~55% White' },
@@ -252,7 +250,7 @@
     const svg = d3.select(container).append('svg')
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('role','img')
-      .attr('aria-label','Map of Los Angeles and Orange counties shaded by the largest population group in each of 15 reference areas.')
+      .attr('aria-label','Map of Los Angeles and Orange counties shaded by the largest population group in each of 14 reference areas.')
       .style('width','100%').style('display','block');
 
     const defs = svg.append('defs');
