@@ -1,0 +1,184 @@
+<title>LA Metro Midlevel 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#F5F6F3; --surface:#FFFFFF; --ink:#22302B; --ink-2:#51605A; --muted:#7B8781;
+    --line:#DDE2DC; --accent:#0E7A66; --accent-soft:#E2EFEA; --grow:#A9642B; --grow-soft:#F3E8DC;
+    --chip:#EDF0EB;
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151A18; --surface:#1E2522; --ink:#E8ECE9; --ink-2:#ADB8B2; --muted:#84908A;
+      --line:#333D38; --accent:#4CBFA6; --accent-soft:#1E3630; --grow:#D89A5E; --grow-soft:#3A2C1D;
+      --chip:#262E2A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151A18; --surface:#1E2522; --ink:#E8ECE9; --ink-2:#ADB8B2; --muted:#84908A;
+    --line:#333D38; --accent:#4CBFA6; --accent-soft:#1E3630; --grow:#D89A5E; --grow-soft:#3A2C1D;
+    --chip:#262E2A;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;line-height:1.55;font-size:16.5px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 72px}
+  header h1{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-weight:700;font-size:clamp(30px,5vw,44px);line-height:1.08;margin:8px 0 10px;text-wrap:balance}
+  .eyebrow{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .lede{color:var(--ink-2);max-width:62ch;margin:0 0 8px}
+  h2{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-weight:600;font-size:23px;margin:52px 0 6px;text-wrap:balance}
+  .sub{color:var(--muted);font-family:"IBM Plex Sans",Arial,sans-serif;font-size:13.5px;margin:0 0 18px}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
+  .tile{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+  .tile b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+  .tile span{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--ink-2)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:680px){.cols{grid-template-columns:1fr}}
+  .bar-row{display:grid;grid-template-columns:11em 1fr 2.2em;align-items:center;gap:10px;font-family:"IBM Plex Sans",Arial,sans-serif;font-size:13.5px;margin:7px 0}
+  .bar-row .lbl{color:var(--ink-2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{height:14px;background:var(--chip);border-radius:0 4px 4px 0}
+  .bar{height:100%;border-radius:0 4px 4px 0;background:var(--accent)}
+  .grow .bar{background:var(--grow)}
+  .bar-row .val{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+  ul{padding-left:20px;margin:10px 0}
+  li{margin:7px 0}
+  .quote{border-left:3px solid var(--accent);padding:2px 0 2px 14px;margin:14px 0;color:var(--ink-2);font-style:italic}
+  .quote cite{display:block;font-style:normal;font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted);margin-top:4px}
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-family:"IBM Plex Sans",Arial,sans-serif;font-size:13.5px;min-width:760px}
+  th{ text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line)}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+  td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  th.n{text-align:right}
+  .pill{display:inline-block;background:var(--chip);border-radius:99px;padding:1px 9px;font-size:12px;white-space:nowrap}
+  .pill.y{background:var(--accent-soft);color:var(--accent);font-weight:600}
+  .note{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted);margin-top:10px}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-family:"IBM Plex Sans",Arial,sans-serif;font-size:12.5px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Gathering brief · Aug 19–22, 2026</span>
+  <h1>LA Metro Midlevel 2026</h1>
+  <p class="lede">A one-page read of everything submitted to the midlevel Airtable ahead of the gathering: <strong>9 leader applications</strong> from house-church gatherings across the LA metro, plus <strong>2 member surveys</strong>. Contact details live in the Airtable and are left off this page.</p>
+  <div class="tiles">
+    <div class="tile"><b>9</b><span>gatherings represented</span></div>
+    <div class="tile"><b>18</b><span>baptisms reported</span></div>
+    <div class="tile"><b>81</b><span>consistent members</span></div>
+    <div class="tile"><b>69</b><span>come-and-go attenders</span></div>
+    <div class="tile"><b>3 of 9</b><span>have elders in place</span></div>
+  </div>
+</header>
+
+<h2>Where and when they meet</h2>
+<p class="sub">All nine gatherings meet in homes; one (Nations Church) meets across multiple houses.</p>
+<div class="cols">
+  <div>
+    <div class="bar-row"><span class="lbl">Orange County</span><div class="bar-track"><div class="bar" style="width:83%"></div></div><span class="val">5</span></div>
+    <div class="bar-row"><span class="lbl">LA / Compton</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">Long Beach</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">Inland Empire</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">N. Orange County</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+  </div>
+  <div>
+    <div class="bar-row"><span class="lbl">Thursday evening</span><div class="bar-track"><div class="bar" style="width:83%"></div></div><span class="val">5</span></div>
+    <div class="bar-row"><span class="lbl">Wednesday evening</span><div class="bar-track"><div class="bar" style="width:33%"></div></div><span class="val">2</span></div>
+    <div class="bar-row"><span class="lbl">Saturday</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">Not yet meeting</span><div class="bar-track"><div class="bar" style="width:17%"></div></div><span class="val">1</span></div>
+  </div>
+</div>
+
+<h2>Church health self-assessment</h2>
+<p class="sub">Leaders checked which marks of a healthy church their gathering is doing well versus where it could grow (out of 9 gatherings).</p>
+<div class="cols">
+  <div>
+    <p class="sub" style="color:var(--accent);font-weight:600">Doing well</p>
+    <div class="bar-row"><span class="lbl">Word of God</span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="val">9</span></div>
+    <div class="bar-row"><span class="lbl">Lordship of Christ</span><div class="bar-track"><div class="bar" style="width:89%"></div></div><span class="val">8</span></div>
+    <div class="bar-row"><span class="lbl">Love</span><div class="bar-track"><div class="bar" style="width:89%"></div></div><span class="val">8</span></div>
+    <div class="bar-row"><span class="lbl">Prayer</span><div class="bar-track"><div class="bar" style="width:89%"></div></div><span class="val">8</span></div>
+    <div class="bar-row"><span class="lbl">Worship</span><div class="bar-track"><div class="bar" style="width:89%"></div></div><span class="val">8</span></div>
+    <div class="bar-row"><span class="lbl">Spirit Led</span><div class="bar-track"><div class="bar" style="width:67%"></div></div><span class="val">6</span></div>
+    <div class="bar-row"><span class="lbl">Fellowship</span><div class="bar-track"><div class="bar" style="width:67%"></div></div><span class="val">6</span></div>
+    <div class="bar-row"><span class="lbl">Obedience</span><div class="bar-track"><div class="bar" style="width:56%"></div></div><span class="val">5</span></div>
+    <div class="bar-row"><span class="lbl">Repentance &amp; faith</span><div class="bar-track"><div class="bar" style="width:56%"></div></div><span class="val">5</span></div>
+    <div class="bar-row"><span class="lbl">Communion</span><div class="bar-track"><div class="bar" style="width:44%"></div></div><span class="val">4</span></div>
+    <div class="bar-row"><span class="lbl">Baptism</span><div class="bar-track"><div class="bar" style="width:44%"></div></div><span class="val">4</span></div>
+    <div class="bar-row"><span class="lbl">Multiplication</span><div class="bar-track"><div class="bar" style="width:11%"></div></div><span class="val">1</span></div>
+  </div>
+  <div class="grow">
+    <p class="sub" style="color:var(--grow);font-weight:600">Could grow</p>
+    <div class="bar-row"><span class="lbl">Multiplication</span><div class="bar-track"><div class="bar" style="width:89%"></div></div><span class="val">8</span></div>
+    <div class="bar-row"><span class="lbl">Communion</span><div class="bar-track"><div class="bar" style="width:44%"></div></div><span class="val">4</span></div>
+    <div class="bar-row"><span class="lbl">Baptism</span><div class="bar-track"><div class="bar" style="width:33%"></div></div><span class="val">3</span></div>
+    <div class="bar-row"><span class="lbl">Obedience</span><div class="bar-track"><div class="bar" style="width:33%"></div></div><span class="val">3</span></div>
+    <div class="bar-row"><span class="lbl">Spirit Led</span><div class="bar-track"><div class="bar" style="width:22%"></div></div><span class="val">2</span></div>
+    <div class="bar-row"><span class="lbl">Love</span><div class="bar-track"><div class="bar" style="width:22%"></div></div><span class="val">2</span></div>
+    <div class="bar-row"><span class="lbl">Fellowship</span><div class="bar-track"><div class="bar" style="width:22%"></div></div><span class="val">2</span></div>
+    <div class="bar-row"><span class="lbl">Lordship of Christ</span><div class="bar-track"><div class="bar" style="width:11%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">Prayer</span><div class="bar-track"><div class="bar" style="width:11%"></div></div><span class="val">1</span></div>
+    <div class="bar-row"><span class="lbl">Worship</span><div class="bar-track"><div class="bar" style="width:11%"></div></div><span class="val">1</span></div>
+  </div>
+</div>
+<p class="note">The headline of the whole dataset sits here: every gathering is confident in the Word, and 8 of 9 name <strong>multiplication</strong> as their growth edge.</p>
+
+<h2>What leaders are celebrating</h2>
+<ul>
+  <li><strong>Multiplication is starting to happen.</strong> Neighbors &amp; Nations has planted two house churches out of its gathering (Compton and La Mirada) and sent out two elders to plant their own church. Nations Church saw a baptism, new people joining, and a new GCT.</li>
+  <li><strong>New believers at the core.</strong> Rooted Church (Compton) is a youth house church made up of four new believers who came to faith last year.</li>
+  <li><strong>Real community, not event attendance.</strong> Multiple leaders describe consistent Word-centered discipleship, shared meals, serving one another's practical needs, and groups "sold out to Jesus."</li>
+  <li><strong>New works launching.</strong> Saints Church (Long Beach) has just begun its first steps; Coach (Inland Empire) is being invited in to coach several groups, including work touching Iranians, North Africans, and Afghans.</li>
+</ul>
+
+<h2>The challenges they're carrying</h2>
+<ul>
+  <li><strong>Legacy-church gravity</strong> — the most repeated theme. "Church as an event to attend rather than an identity" (Garden), members still tied to legacy churches which dilutes multiplication DNA (Anchor Anaheim), and coached young adults feeling obligated to run the legacy church's playbook (Corona Sandals).</li>
+  <li><strong>From fellowship to obedience-based discipleship.</strong> Several leaders say their people love Jesus and each other but don't yet practice discipleship as obedience and reproduction.</li>
+  <li><strong>Retention and depth.</strong> Baptisms that don't stick (member survey), young believers whose Catholic families won't allow baptism (Rooted), going through the motions and lacking affection (Nations), summer inconsistency (Anchor).</li>
+  <li><strong>Leader bandwidth.</strong> Balancing normal shepherding with an eye toward new work; wanting new elders so vision and new places get attention (Neighbors &amp; Nations).</li>
+</ul>
+<div class="quote">"For too long, we've been exposed to a discipleship of knowledge rather than a discipleship of obedience."<cite>Rick Gregory, Garden (Huntington Beach)</cite></div>
+
+<h2>Who they're trying to reach</h2>
+<p class="sub">People groups and places named across the applications.</p>
+<div class="card" style="font-family:'IBM Plex Sans',Arial,sans-serif;font-size:13.5px;line-height:2">
+  <span class="pill">Hispanic / Spanish speakers ×3</span> <span class="pill">Vietnamese ×2</span> <span class="pill">Youth (middle &amp; high school)</span> <span class="pill">Recovery community</span> <span class="pill">Iranians</span> <span class="pill">North Africans</span> <span class="pill">Afghans</span> <span class="pill">Punjabi</span> <span class="pill">Gujarati</span> <span class="pill">Japanese</span> <span class="pill">Jewish</span> <span class="pill">Chinese</span> <span class="pill">LGBTQ+ community</span> <span class="pill">Low income</span> <span class="pill">Elderly</span> <span class="pill">Young families</span> <span class="pill">Young adults</span> <span class="pill">Musicians</span> <span class="pill">Coworkers &amp; neighbors</span>
+  <div class="note">Places: Carroll Park (Long Beach) · Compton · Oak View, Huntington Beach · Anaheim &amp; West LA · Little Saigon &amp; Irvine Valley College · San Tract, Buena Park · SF Valley, San Gabriel Valley, OC, LB, LA · Inland Empire plus Morocco, Spain, France · venues &amp; grocery stores</div>
+</div>
+
+<h2>Gathering roster</h2>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Leader</th><th>Church</th><th>Area</th><th>Meets</th><th class="n">Members</th><th class="n">Come &amp; go</th><th class="n">Baptisms</th><th>Elders</th></tr></thead>
+  <tbody>
+    <tr><td>Josh McKay</td><td>Neighbors &amp; Nations / Hosanna</td><td>N. Orange County</td><td>Wed 6:00p, Buena Park</td><td class="n">15</td><td class="n">25</td><td class="n">12</td><td><span class="pill y">Yes — 7</span></td></tr>
+    <tr><td>Rick Gregory</td><td>Garden</td><td>Orange County</td><td>Thu 6:30p, home</td><td class="n">12</td><td class="n">30</td><td class="n">1</td><td><span class="pill">Not yet</span></td></tr>
+    <tr><td>Justin Bain</td><td>Anchor Church</td><td>Orange County</td><td>Thu 6:30p, Anaheim</td><td class="n">14</td><td class="n">2</td><td class="n">0</td><td><span class="pill">—</span></td></tr>
+    <tr><td>Kyle Pierson</td><td>Anchor</td><td>Orange County</td><td>Thu 6:30p, home</td><td class="n">12</td><td class="n">3</td><td class="n">0</td><td><span class="pill">—</span></td></tr>
+    <tr><td>Cameron Aspinwall</td><td>Anchor Church, Anaheim</td><td>Orange County</td><td>Thu 6:30p, Anaheim</td><td class="n">10</td><td class="n">3</td><td class="n">0</td><td><span class="pill">—</span></td></tr>
+    <tr><td>Jorge Estupiñan Jr</td><td>Rooted Church</td><td>LA (Compton)</td><td>Thu 6:30p, home</td><td class="n">10</td><td class="n">1</td><td class="n">0</td><td><span class="pill y">Yes — 2</span></td></tr>
+    <tr><td>Robert Caballes</td><td>Nations Church</td><td>Orange County</td><td>Sat 5:00p, Costa Mesa +</td><td class="n">8</td><td class="n">5</td><td class="n">1</td><td><span class="pill y">Yes</span></td></tr>
+    <tr><td>Coach</td><td>Corona Sandals</td><td>Inland Empire</td><td>Wed 6:30p, home</td><td class="n">0</td><td class="n">0</td><td class="n">4</td><td><span class="pill">—</span></td></tr>
+    <tr><td>Michael Petrila</td><td>Saints Church</td><td>Long Beach</td><td>Just starting</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td><span class="pill">—</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Neighbors &amp; Nations counts 5 elders plus 2 at Hosanna. "—" means the elders question was left unchecked. Coach's numbers reflect a coaching role across several groups rather than one gathering.</p>
+
+<h2>Member surveys</h2>
+<p class="sub">Two responses so far, both from Nations Church.</p>
+<div class="cols">
+  <div class="card">
+    <strong>Peter Nguyen</strong> <span class="note" style="display:inline;margin:0">· Costa Mesa</span>
+    <p style="margin:8px 0 0;color:var(--ink-2)">New to the gathering. Wins: meeting people, Discovery Bible Study, setting faith goals. Sees consistent attendance and members completing goals; still finding a weekday study rhythm. Checked 9 of 12 health marks as "doing well."</p>
+  </div>
+  <div class="card">
+    <strong>Lauren &amp; Stacy Yoshiba</strong> <span class="note" style="display:inline;margin:0">· various homes, OC</span>
+    <p style="margin:8px 0 0;color:var(--ink-2)">Celebrate many baptisms and a shift from "attending church" to operating as family. Concern: some of the baptized don't stay in the faith, and community outside Saturday meetings is limited by distance. Growth edges checked: Spirit Led, Love, Prayer, Fellowship.</p>
+  </div>
+</div>
+
+<footer>Source: "LA Metro Midlevel 2026" Airtable — Applications (9 records) and Member Survey (2 records), as of Aug 18, 2026. Emails and phone numbers are in the base and intentionally omitted here.</footer>
+</div>
